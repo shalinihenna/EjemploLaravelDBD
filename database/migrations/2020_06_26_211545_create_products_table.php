@@ -21,12 +21,7 @@ class CreateProductsTable extends Migration
             $table->boolean('estado_vitrina');
             $table->integer('peso_contenido');
             $table->string('marca');
-            $table->string('categoria');
             $table->timestamps();
-
-            //Llave foranea
-            /*$table->integer('sucursal_id')->unsigned();
-            $table->foreign('sucursal_id')->references('id')->on('sucursal');*/
         });
     }
 

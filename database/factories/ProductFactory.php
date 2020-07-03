@@ -13,6 +13,5 @@ $factory->define(Product::class, function (Faker $faker) {
         'estado_vitrina' => $faker->boolean,
         'peso_contenido' => $faker->numberBetween($min=10,$max=1000),
         'marca'=> $faker->word,
-        'categoria' => $faker->word,
     ];
 });
