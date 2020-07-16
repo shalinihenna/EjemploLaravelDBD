@@ -21,6 +21,10 @@ class CreateProductsTable extends Migration
             $table->boolean('estado_vitrina');
             $table->integer('peso_contenido');
             $table->string('marca');
+
+            $table->unsignedInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete("cascade")->onUpdate("cascade");
+
             $table->timestamps();
         });
     }

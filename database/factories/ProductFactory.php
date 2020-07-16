@@ -6,6 +6,9 @@ use App\Product;
 use Faker\Generator as Faker;
 
 $factory->define(Product::class, function (Faker $faker) {
+
+	$id_categorias = App\Categoria::pluck('id')->toArray();
+
     return [
         'nombre' => $faker->name,
         'descripcion' => $faker->text,
@@ -13,5 +16,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'estado_vitrina' => $faker->boolean,
         'peso_contenido' => $faker->numberBetween($min=10,$max=1000),
         'marca'=> $faker->word,
+
+        'categoria_id' => $faker->randomElement($id_categorias),
     ];
 });
