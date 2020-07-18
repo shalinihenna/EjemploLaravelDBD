@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// Controladores
+
+// Listar
+Route::get('/sucursales','SucursalController@index');
+// Crear un nuevo registros
+Route::post('/sucursales', 'SucursalController@store');
+// Listar un elemento en especifico
+Route::get('/sucursales/{id}', 'SucursalController@show');
+Route::put('/sucursales/update/{id}', 'SucursalController@update');
+Route::delete('/sucursales/{id}', 'SucursalController@destroy');
+
+//Route::resource('sucursales','SucursalController');
